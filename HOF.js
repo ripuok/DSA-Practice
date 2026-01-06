@@ -23,11 +23,15 @@ sort (high difficulty)
 
 */
 
-function map(){
+function mapfn(arr,fn){
   let response=[];
-
-  
+  for(let i =0; i<arr.length;i++){
+    response.push(fn(arr[i],i,arr))
+  }
+  return response;
 }
+let array=[1,4,5];
 
+console.log(mapfn(array,x=>x*2))
 
 
